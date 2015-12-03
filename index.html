@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MohitApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1" />
+	<link rel="shortcut icon" href="/img/faviconn.png"/>
+    <!--CSS libs-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="style/main.css">
+    <title>Mohit</title>
+</head>
+<body ng-controller="AppCtrl">
+    <md-toolbar layout="row" layout-align="space-around center" layout-wrap>
+        <md-button ng-repeat="menu in menuItems" ng-href="{{menu.url}}" class="menu-btn">
+            <i class="fa {{menu.class}}"></i> {{menu.text}}
+        </md-button>
+    </md-toolbar>
+<!-- Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
+<script src="js/libs/angular-typewriter.js"></script>    
+<script src="js/app.js"></script>    
+</body>
+</html>
