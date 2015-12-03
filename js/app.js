@@ -7,7 +7,7 @@ angular.module('MohitApp', ['ngMaterial', 'ngRoute', 'angular-timeline', 'angula
 // Theme setup
 angular.module('MohitApp').config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('brown')
+        .primaryPalette('green')
         .accentPalette('orange');
 });
 
@@ -50,19 +50,19 @@ angular.module('MohitApp').controller('AppCtrl', function($scope) {
             url: "#/about"
         },
         {
-            class: "fa-graduation-cap",
-            text: "Academics",
-            url: "#/academics"
-        },
-        {
-            class: "fa-coffee",
-            text: "Work",
-            url: "#/work"
+            class: "fa-book",
+            text: "Blog",
+            url: "#/blog"
         },
         {
             class: "fa-code",
             text: "Projects",
             url: "#/projects"
+        },
+        {
+            class: "fa-trophy",
+            text: "Achievments/Exp",
+            url: "#/achievments"
         }
     ];
 });

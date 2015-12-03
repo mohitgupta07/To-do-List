@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    
     <link rel="stylesheet" href="style/main.css">
+    
     <title>Mohit</title>
 </head>
 <body ng-controller="AppCtrl">
     <md-toolbar layout="row" layout-align="space-around center" layout-wrap>
-        <md-button ng-repeat="menu in menuItems" ng-href="{{menu.url}}" class="menu-btn">
-            <i class="fa {{menu.class}}"></i> {{menu.text}}
+        <md-button class="md-raised" ng-repeat="menu in menuItems" ng-href="{{menu.url}}" class="menu-btn">
+            <i class="fa  {{menu.class}}"></i> {{menu.text}}
         </md-button>
     </md-toolbar>
+    
 <!-- Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>

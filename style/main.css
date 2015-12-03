@@ -127,6 +127,9 @@ body{
 .menu-btn{
     min-width: 150px;
 }
+.menu-btn:hover{
+    color:green;
+}
 .max-content-width{
     max-width: 700px;
 }
