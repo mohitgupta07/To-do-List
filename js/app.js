@@ -2,7 +2,7 @@
  * Created by praveen on 12.09.15.
  */
 
-angular.module('MohitApp', ['ngMaterial', 'ngRoute', 'angular-timeline', 'angularTypewrite']);
+angular.module('MohitApp', ['ngMaterial', 'ngRoute', 'angular-timeline']);
 
 // Theme setup
 angular.module('MohitApp').config(function($mdThemingProvider) {
@@ -39,7 +39,8 @@ angular.module('MohitApp').config(function($routeProvider) {
         .otherwise({
             templateUrl : 'view/intro.html',
             controller  : 'IntroCtrl'
-        });
+    })
+    
 });
 
 angular.module('MohitApp').controller('AppCtrl', function($scope) {
