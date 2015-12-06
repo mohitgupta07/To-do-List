@@ -7,8 +7,8 @@ angular.module('MohitApp', ['ngMaterial', 'ngRoute', 'angular-timeline']);
 // Theme setup
 angular.module('MohitApp').config(function($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('green')
-        .accentPalette('orange');
+        .primaryPalette('indigo')
+        .accentPalette('deep-orange');
 });
 
 // Constants setup
@@ -21,8 +21,8 @@ angular.module('MohitApp').constant('config', {
 angular.module('MohitApp').config(function($routeProvider) {
     $routeProvider
         .when('/about',{
-            templateUrl : 'view/about.html',
-            controller  : 'AboutCtrl'
+            templateUrl : 'view/intro.html',
+            controller  : 'IntroCtrl'
         })
         .when('/academics',{
             templateUrl : 'view/academics.html',
@@ -36,10 +36,6 @@ angular.module('MohitApp').config(function($routeProvider) {
             templateUrl : 'view/project.html',
             controller  : 'ProjectCtrl'
         })
-        .otherwise({
-            templateUrl : 'view/intro.html',
-            controller  : 'IntroCtrl'
-    })
     
 });
 

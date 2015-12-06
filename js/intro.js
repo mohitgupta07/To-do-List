@@ -1,12 +1,12 @@
 /**
- * Created by praveen on 13.09.15.
+ * Created by praveen on 12.09.15.
  */
 
-angular.module('MohitApp').controller('IntroCtrl', function($scope, $timeout, config, $http) {
-    $scope.messages = null;
+angular.module('MohitApp').controller('IntroCtrl', function($scope, $timeout, config, $http, $sce) {
+    $scope.profile = null;
     $scope.ready = 0;
 
-    // Get projects info
+    // Get profile
     $scope.loadData = function(){
         var req = {
             method: 'GET',
@@ -15,13 +15,17 @@ angular.module('MohitApp').controller('IntroCtrl', function($scope, $timeout, co
         $http(req)
             .then(
             function (response) { // Success callback
-                $scope.messages = response.data;
+                $scope.profile = response.data;
                 $scope.ready = 1;
             },
             function (response) { //Error callback
                 console.log(response.toString());
             }
         );
+    };
+
+    $scope.renderHtml = function (htmlCode) {
+        return $sce.trustAsHtml(htmlCode);
     };
 
     // Delayed call to avoid navbar freeze on close
