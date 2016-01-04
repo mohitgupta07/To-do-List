@@ -1,39 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MohitApp">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1" />
 	<link rel="shortcut icon" href="/img/faviconn.png"/>
-    <!--CSS libs-->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
-    <link rel="stylesheet" href="bower_components/angular-timeline/dist/angular-timeline.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link rel="stylesheet" href="style/main.css">
     
-    <title>Mohit</title>
+    <title>Todo App</title>
 </head>
-<body ng-controller="AppCtrl">
-    <md-toolbar layout="row" layout-align="space-around center" layout-wrap>
-        <md-button class="md-raised" ng-repeat="menu in menuItems" ng-href="{{menu.url}}" class="menu-btn">
-            <i class="fa  {{menu.class}}"></i> {{menu.text}}
-        </md-button>
-    </md-toolbar>
-   <div layout="column" class="content-view" ng-view>
-    </div>
-   
-     
-   
-<!-- Libraries -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-<script src="bower_components/angular-timeline/dist/angular-timeline.js"></script>
-<script src="js/app.js"></script>
-<script src="js/intro.js"></script>
-    <script src="js/project.js"></script>
+    <body>
+        
+    <div ng-app="MyApp">
+  <h2>Todo</h2>
+  <div ng-controller="TodoCtrl">
+    <span>{{remaining()}} of {{todos.length}} remaining</span>
+    [ <a href="" ng-click="archive()">archive</a> ]
+    <ul class="unstyled">
+      <li ng-repeat="todo in todos">
+        <input type="checkbox" ng-model="todo.done">
+        <span class="done-{{todo.done}}">{{todo.text}}</span>
+      </li>
+    </ul>
+    <form ng-submit="addTodo()">
+      <input type="text" ng-model="todoText"  size="30"
+             placeholder="add new todo here">
+      <input class="btn-primary" type="submit" value="add">
+    </form>
+  </div>
+</div>
 
+    <script src="js/app.js"></script>
 </body>
 </html>
