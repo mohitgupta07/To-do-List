@@ -17,21 +17,20 @@
     <div ng-app="MyApp">
   <h2 align="center">Todo</h2>
   <div ng-controller="TodoCtrl" class="container">
-    <span>{{remaining()}} of {{todos.length}} remaining</span>
-    [ <a href="" ng-click="archive()">clear completed items</a> ]
-    <form ng-submit="addTodo()">
-      <input type="text" ng-model="todoText"  size="30" class="form-control"
-             placeholder="add new todo here">
-        <button class="btn-primary" type="submit" value="add">add</button>
+    <form ng-submit="addTodo()" class="form-group" role="form">
+      <input  style="height:50px;" type="text" ng-model="todoText" class="form-control"
+             placeholder="What needs to be done ?">
+        <br>
+        <p align="center"><input type="button" class="btn btn-info" value="add"></p>
     </form>
-      <div class="panel panel-default">
-       <ol class="unstyled">
-      <li ng-repeat="todo in todos">
-        <input type="checkbox" ng-model="todo.done">
-        <span>{{todo.text}}</span>
-          <span class="destroy"></span>
+      <div class="list-group">
+    <ol>
+      <li ng-repeat="todo in todos" class="list-group-item">
+              <div class="todo"> <input type="checkbox" ng-model="todo.done">  {{ todo.text }} </div>
       </li>
     </ol>
+           <div class="list-group-item" style="text-align:center;">{{remaining()}} of {{todos.length}} items left</br>
+               <a href="" ng-click="archive()">Clear completed items</a></div>
       </div>
   </div>
 </div>
