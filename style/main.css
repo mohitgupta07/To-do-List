@@ -1,0 +1,8 @@
+.destroy
+{
+    position: absolute;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background: url(../img/ds1.png) no-repeat 0 0;
+}

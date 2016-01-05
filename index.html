@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1" />
 	<link rel="shortcut icon" href="/img/faviconn.png"/>
-    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link rel="stylesheet" href="style/main.css">
     
@@ -13,21 +15,24 @@
     <body>
         
     <div ng-app="MyApp">
-  <h2>Todo</h2>
-  <div ng-controller="TodoCtrl">
+  <h2 align="center">Todo</h2>
+  <div ng-controller="TodoCtrl" class="container">
     <span>{{remaining()}} of {{todos.length}} remaining</span>
-    [ <a href="" ng-click="archive()">archive</a> ]
-    <ul class="unstyled">
+    [ <a href="" ng-click="archive()">clear completed items</a> ]
+    <form ng-submit="addTodo()">
+      <input type="text" ng-model="todoText"  size="30" class="form-control"
+             placeholder="add new todo here">
+        <button class="btn-primary" type="submit" value="add">add</button>
+    </form>
+      <div class="panel panel-default">
+       <ol class="unstyled">
       <li ng-repeat="todo in todos">
         <input type="checkbox" ng-model="todo.done">
-        <span class="done-{{todo.done}}">{{todo.text}}</span>
+        <span>{{todo.text}}</span>
+          <span class="destroy"></span>
       </li>
-    </ul>
-    <form ng-submit="addTodo()">
-      <input type="text" ng-model="todoText"  size="30"
-             placeholder="add new todo here">
-      <input class="btn-primary" type="submit" value="add">
-    </form>
+    </ol>
+      </div>
   </div>
 </div>
 
