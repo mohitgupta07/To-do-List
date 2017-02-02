@@ -8,3 +8,33 @@ input
     color: #333333;
     font-family: sans-serif;
 }
+
+
+*
+{
+    font-family:cursive;
+}
+//this will give a animated feel to the buttons... !!!
+.rotatebutton
+{
+  animation : rotatebuttonkey 1s ease 1;
+}
+.rotatebutton:active
+{
+  animation : rotatebuttonkeyZ 1.5s ease  1;
+}
+@keyframes  rotatebuttonkey{
+  0% {transform: rotateX(0deg) scale(1);}
+
+  50% {transform: rotateX(180deg) scale(1.1);}
+  0% {transform: rotateX(0deg) scale(1);}
+}
+@keyframes  rotatebuttonkeyZ{
+  0% {transform: rotateZ(0deg) scale(1);}
+
+  25% {transform: rotateZ(90deg) scale(1.1);}
+  50% {transform: rotateZ(0deg) scale(1);}
+  75% {transform: rotateZ(-90deg) scale(1.1);}
+  100% {transform: rotateZ(0deg) scale(1);}
+
+}
